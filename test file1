@@ -1,1348 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <!-- Google tag (gtag.js) --> <script async src="https://www.
- googletagmanager.com/gtag/js?id=AW-17218259609"></script> <script>
- window.dataLayer = window.dataLayer || []; function gtag()
- {dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
- 'AW-17218259609'); </script>
-  <!-- Event snippet for Contact conversion page --> <script> gtag('event',
- 'conversion', {'send_to': 'AW-17218259609/e94YCPeBwuQaEJmVp5JA'});
- </script>
- 
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBPH742WF0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XBPH742WF0');
-</script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Walk-In Closets in Dubai| Theyyampattil Furnitures </title>
-    <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="" />
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-        <script src="https://kit.fontawesome.com/34639cb93a.js" crossorigin="anonymous"></script>
-
-
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
-    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
-    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
-    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
-    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
-    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
-    <link rel="stylesheet" href="assets/vendors/ambed-icons/style.css">
-    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
-    <link rel="stylesheet" href="assets/vendors/reey-font/stylesheet.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
-    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
-    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
-    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
-
-    <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/ambed.css" />
-    <link rel="stylesheet" href="assets/css/ambed-responsive.css" />
-
-    <!-- modes css -->
-    <link rel="stylesheet" id="jssMode" href="assets/css/ambed-light.css">
-
-
-    <!-- toolbar css -->
-    <link rel="stylesheet" href="assets/vendors/toolbar/css/toolbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Biz International | High-End Digital Solutions</title>
     
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11411359769"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11411359769');
-</script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="custom-cursor">
+    <canvas id="particleCanvas"></canvas>
 
-    <div class="custom-cursor__cursor"></div>
-    <div class="custom-cursor__cursor-two"></div>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="4Biz International">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">GET STARTED</a>
+        </div>
+    </header>
 
-   
+    <section class="hero">
+        <div class="container hero-content fade-up">
+            <span class="section-tag">Impacting Infinite</span>
+            <h1 class="ultra-heading">Your Partner in <br><span class="gradient-text">Digital Evolution</span></h1>
+            <p>4Biz International stands out in Dubai's business scene, breaking the conventional mold with an unconventional approach to global success.</p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <a href="contact.html" style="background: var(--accent); color: #fff; padding: 16px 40px; border-radius: 100px; text-decoration: none; font-weight: 600; transition: 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Get Appointment</a>
+                <a href="#about" style="border: 1px solid #fff; color: #fff; padding: 16px 40px; border-radius: 100px; text-decoration: none; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-
-
-    <!--<div class="preloader">-->
-    <!--    <div class="preloader__image"></div>-->
-    <!--</div>-->
-    <!-- /.preloader -->
-    <div class="page-wrapper">
-        <header class="main-header clearfix">
-            <div class="main-header__top">
-                <div class="container">
-                    <div class="main-header__top-inner clearfix">
-                        <div class="main-header__logo">
-                            <a href="https://theyyampattilgcc.com/">
-                                <img src="assets/images/resources/log.png" alt="" class="dark-logo">
-                                <img src="assets/images/resources/log.png" alt="" class="light-logo">
-                            </a>
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="reveal-grid">
+                <div class="fade-up">
+                    <span class="section-tag">About 4Biz</span>
+                    <h2 class="ultra-heading">An Unconventional <br><span class="gradient-text">Approach to Success</span></h2>
+                    <p style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 25px;">
+                        Our mission is to instill confidence in every step you take with us. 4Biz International stands out by offering an unmatched experience rooted in trust and excellence.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 35px;">
+                        Going beyond traditional IT consulting, we aim to be your dedicated partner in achieving your loftiest business goals through relentless innovation.
+                    </p>
+                    
+                    <div style="display: flex; gap: 50px;">
+                        <div>
+                            <h3 style="color: var(--accent); font-size: 2.5rem; font-family: 'Space Grotesk';">100%</h3>
+                            <p style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px;">Commitment</p>
                         </div>
-                        <div class="main-header__top-right">
-                            <div class="main-header__top-right-content">
-                                <div class="main-header__top-address-box">
-                                    <ul class="list-unstyled main-header__top-address">
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-phone-call"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Call Us</p>
-                                                <h5><a href="tel:+971559132200">+971559132200</a></h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-message"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Send email</p>
-                                                <h5><a href="mailto:sales@theyyampattilgcc.com">sales@theyyampattilgcc.com</a></h5>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="icon icon--location">
-                                                <span class="icon-location"></span>
-                                            </div>
-                                            <div class="content">
-                                                <p>Theyyampattil Furniture Trading LLC<br> Dubai-04 333 6116 Sharjah - 06 7676 297<br>Abudhabi - 026 26 85 26</p>
-                                                <h5>Theyyampattil Furniture</h5>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="main-header__top-right-social">
-                                    <a href="https://www.tiktok.com/@theyyampatill_furniture?_t=8eVHrpkCNSE&_r=1"><i class="fab fa-tiktok"></i></a>
-                                    <a href="https://www.facebook.com/share/1AcRXM8DF7/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                                     <a href="https://x.com/TheyyampattilF"><i class="fa-brands fa-x-twitter"></i></a> 
-                                    <a href="https://instagram.com/theyyampattil_furniture_dubai?igshid=MzRlODBiNWFlZA=="><i class="fab fa-instagram"></i></a>
-                                    <a href="https://www.youtube.com/@TheyyampattilFurnitureuae/featured"><i class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
+                        <div>
+                            <h3 style="color: var(--secondary); font-size: 2.5rem; font-family: 'Space Grotesk';">Dubai</h3>
+                            <p style="font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px;">HQ Location</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- <nav class="main-menu clearfix">
-                <div class="main-menu__wrapper clearfix">
-                    <div class="container">
-                        <div class="main-menu__wrapper-inner clearfix">
-                            <div class="main-menu__left">
-                                <div class="main-menu__main-menu-box">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
-                                    <ul class="main-menu__list">
-                                        <li class="">
-                                            <a href="index.html">Home </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="about.html">About </a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Resources </a>
-                                            <ul>
-                                                <li><a href="gallery.html">Gallery</a></li>
-                                                <li><a href="downloads.html">Downloads</a></li>
-                                                <li><a href="videos.html">Videos</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="prodct.html">Products</a>
-                                            <ul>
-                                                
-                                                <li><a href="tvwall.html">Tv Wall</a></li>
-                                                <li><a href="kitchen-unit.html">Kitchen</a></li>
-                                                <li><a href="dressing.html">Closets</a></li>
-                                                <li><a href="partition.html">Partition</a></li>
-                                                
-                                                 <li><a href="bedroom.html">Bed Panels</a></li> 
-                                                <li><a href="kids.html">Wall Panels</a></li>
-                                                <li><a href="wall.html">Wall Cladding</a></li>
-                                                <li><a href="welcome.html">Welcome Unit</a></li>
-                                                
-                                            </ul>
-                                            <li><a href="blog.html">Blog</a></li>
-                                        </li>
-                                        <li><a href="contact.html">Contact </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </nav> -->
-        </header>
 
-        <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-        <!--Page Header Start-->
-        <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
-            </div>
-            <div class="container">
-                <div class="page-header__inner">
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="">Home</a></li>
-                        <!-- <li><span>/</span></li> -->
-                        <!-- <li><a href="services.html">Services</a></li> -->
-                        <li><span>/</span></li>
-                        <li>Walk-In Closets in Dubai </li>
-                    </ul>
-                    <h2>Luxury custom made walk-in closets in UAE</h2>
-                </div>
-            </div>
-        </section>
-        <!--Page Header End-->
-
-        <!--Service Details Start-->
-        <section class="service-details">
-            <div class="container">
-                <div class="row">
-                   
-                    <div class="col-xl-11 col-lg-11">
-                        <div class="service-details__right">
-                            <div class="service-details__img">
-                                <img src="assets/images/services/services-details-img-4.jpg" alt="">
-                                <div class="service-details__icon">
-                                    <span class="icon-wallpaper-4"></span>
-                                </div>
-                            </div>
-                            <div class="service-details__content">
-                                <h3 class="service-details__content-title">Luxury Meets Functionality with Theyyampattil Furniture</h3>
-                                <p class="service-details__text-1">Create a personal sanctuary of style with Theyyampattil’s custom-designed walk-in closets – 
-                                    where elegance, space, and smart organization come together. Our walk-in wardrobes are more 
-                                    than just storage; they are a reflection of your lifestyle. </p>
-                                
-                                <!-- <p class="service-details__text-3">It has survived not only five centuries. Lorem Ipsum
-                                    is simply dummy text of the new design printng and type setting Ipsum take a look at
-                                    our round. When an unknown printer took a galley of type and scrambled it to make a
-                                    type specimen book. It has survived not only five centuries, but also the leap into
-                                    electronic typesetting.</p> -->
-                            </div>
-                            
-                            <div class="service-details__benefits">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="service-details__benefits-img">
-                                            <img src="assets/images/services/service-details-benefits-img.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <div class="service-details__benefits-right">
-                                            <h3 class="service-details__benefits-title">Why Choose Theyyampattil Walk-In Closets?</h3>
-                                            <ul class="list-unstyled service-details__benefits-points">
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p><strong>Custom Designs</strong> – Built to your exact measurements and preferences </p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p><strong>Premium Materials</strong> – Durable, high-quality wood and finishes </p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p><strong>Smart Storage Solutions</strong> – Optimize space with thoughtful organization </p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p><strong>LED Lighting & Accessories</strong> – Add elegance and convenience</p>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="icon">
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                    <div class="text">
-                                                        <p><strong>Professional Installation</strong> – Hassle-free setup by our expert team</p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
+                <div class="fade-up" style="transition-delay: 0.2s;">
+                    <div style="border-radius: 40px; overflow: hidden; border: 1px solid var(--border); position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                        <img src="assets/images/about.png" alt="Evolution" style="width: 100%; display: block; filter: brightness(0.7) contrast(1.1);">
+                        <div style="position: absolute; bottom:0; left:0; width:100%; height:50%; background: linear-gradient(to top, var(--bg), transparent);"></div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Service Details End-->
+        </div>
+    </section>
+
+
+    <section class="section-padding" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div style="text-align: left; margin-bottom: 60px;" class="fade-up">
+                <span class="section-tag">Our Expertise</span>
+                <h2 class="ultra-heading">Comprehensive <br><span class="gradient-text">Digital Solutions</span></h2>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-card fade-up">
+                    <div class="icon-wrap"><i class="fab fa-microsoft"></i></div>
+                    <h3 style="margin-bottom: 15px; font-family: 'Space Grotesk';">Dynamics 365</h3>
+                    <p style="color: var(--text-dim);">Unify your CRM and ERP systems for streamlined business operations and intelligent, data-driven decisions.</p>
+                </div>
+                
+                <div class="bento-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="icon-wrap"><i class="fas fa-search-dollar"></i></div>
+                    <h3 style="margin-bottom: 15px; font-family: 'Space Grotesk';">SEO Mastery</h3>
+                    <p style="color: var(--text-dim);">Optimize for high search rankings and a massive surge in leads within the competitive UAE digital landscape.</p>
+                </div>
+                
+                <div class="bento-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="icon-wrap"><i class="fas fa-rocket"></i></div>
+                    <h3 style="margin-bottom: 15px; font-family: 'Space Grotesk';">Web Development</h3>
+                    <p style="color: var(--text-dim);">Cost-effective, high-performance web management using the latest frameworks and cloud technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ABOUT -->
+<section id="about" class="about container">
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>About 4Biz International</h2>
+      <p>4Biz International stands out in Dubai's business scene with an unconventional approach to success — built on trust, innovation, and excellence. We act as a dedicated partner to help businesses scale with tailored digital solutions.</p>
+      <a class="btn btn-primary" href="#contact">Get An Appointment</a>
+    </div>
+    <div class="about-stats">
+      <div class="stat">
+        <h3>Commitment</h3>
+        <p>Client-centric excellence; long-term partnerships to unlock business potential.</p>
+      </div>
+      <div class="stat">
+        <h3>Impact</h3>
+        <p>Web, SEO, CRM, Content, Branding, Hosting, Social Media & more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT -->
+<section id="commitment" class="commitment container">
+  <h2>Our Commitment</h2>
+  <p>We go beyond traditional IT consulting to become your partner in achieving ambitious business goals. Every decision is driven by your success.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services container">
+  <h2>What We Do</h2>
+  <div class="services-grid">
+    <article class="card">
+      <h3>Microsoft Dynamics 365</h3>
+      <p>Unify CRM and ERP for streamlined operations and data-driven decisions.</p>
+    </article>
+    <article class="card">
+      <h3>Search Engine Optimization</h3>
+      <p>Improve visibility, rankings, and lead generation with targeted SEO strategies.</p>
+    </article>
+    <article class="card">
+      <h3>Web Design & Development</h3>
+      <p>Modern, responsive websites with performance and conversion focus.</p>
+    </article>
+    <article class="card">
+      <h3>More Services</h3>
+      <p>Content marketing, hosting, branding, photoshoots, email & SMS marketing.</p>
+    </article>
+  </div>
+  <a class="btn btn-outline" href="#contact">Get In Touch</a>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews container">
+  <h2>Customer Reviews</h2>
+  <p>We provide a comprehensive suite of digital services and are committed to transforming businesses through innovation and excellence.</p>
+  <a class="btn" href="#contact">Write A Review</a>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq container">
+  <h2>FAQ's</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">What services does 4Biz International offer?</button>
+      <div class="faq-a">Web development, CRM solutions, hosting, SEO, social media, branding and more.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How can digital marketing help my business in the UAE?</button>
+      <div class="faq-a">Increase visibility, attract customers, improve reputation, and drive sales.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog" class="blog container">
+  <h2>Latest News</h2>
+  <ul class="blog-list">
+    <li><strong>Jan 2, 2024</strong> — Mastering the Digital Terrain: Choosing the right CMS</li>
+    <li><strong>Mar 19, 2021</strong> — Transforming Business Dynamics: ERP Solutions</li>
+  </ul>
+  <a class="btn btn-secondary" href="/blog.html">View All Posts</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact container">
+  <h2>Contact</h2>
+  <p><strong>Phone:</strong> +971 52 79 25 100</p>
+  <p><strong>Email:</strong> info@4bizinternational.com</p>
+  <p><strong>Address:</strong> Office 104, Crystal Building, Near ADCB Metro Station, Al Karama, Dubai, UAE</p>
+  <a class="btn btn-primary" href="mailto:info@4bizinternational.com">Email Us</a>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="section-padding" style="border-top: 1px solid var(--border); background: #000;">
+        <div class="container footer-grid">
+            <div>
+                <h2 class="ultra-heading" style="font-size: 2.2rem; margin-bottom: 15px;">4BIZ<span style="color: var(--accent);">.</span></h2>
+                <p style="color: var(--text-dim); max-width: 300px;">Breaking the conventional mold in Dubai since 2015. Your partner in digital excellence.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Expertise</h4>
+                <ul style="list-style: none; color: var(--text-dim); font-size: 0.9rem; line-height: 2.5;">
+                    <li><a href="#" style="color: inherit; text-decoration: none;">CRM Solutions</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">SEO Marketing</a></li>
+                    <li><a href="#" style="color: inherit; text-decoration: none;">Web Platforms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 25px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Contact</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 10px;">Office 104, Crystal Building, Dubai</p>
+                <p style="color: var(--text-dim); font-size: 0.9rem; font-weight: 700;">info@4bizinternational.com</p>
+            </div>
+        </div>
         
-         <!--Gallery Page Start-->
-		<section class="gallery-page gallery-page--carousel">
-			<div class="container">
-				<div class="thm-owl__carousel owl-theme owl-carousel owl-with-shadow owl-dot-one owl-dot-one--md owl-nav-one owl-nav-one--md"
-					data-owl-options='{
-					"items": 3,
-					"margin": 30,
-					"smartSpeed": 700,
-					"loop":true,
-					"autoplay": 6000,
-					"nav":true,
-					"dots":true,
-					"navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-					"responsive":{
-						"0":{
-							"items":1
-						},
-						"575":{
-							"items":2
-						},
-						"992":{
-							"items": 3
-						}
-					}
-				}'>
-				    
-				    
-				    
-				<!--gallery product update starts here-->
-				
-				
-				<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-24.JPEG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-24.JPEG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-23.JPEG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-23.JPEG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-22.JPEG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-22.JPEG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-21.JPG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-21.JPG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-20.JPEG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-20.JPEG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-				
-				<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-19.JPG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-19.JPG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-18.JPG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-18.JPG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-				
-				<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-17.JPG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-17.JPG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-16.JPG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-16.JPG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-15.JPG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-15.JPG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-14.JPEG" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-14.JPEG"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-				    	<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-13.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-13.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				    
-				    	<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-12.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-12.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				    
-				    
-				    
-				    
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-11.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-11.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-10.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-10.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-9.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-9.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-8.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-8.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-7.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-7.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-6.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-6.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-5.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-5.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-1.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-1.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-2.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-2.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-3.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-3.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/closet-slide-4.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/closet-slide-4.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-29.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-29.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-28.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-28.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-27.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-27.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-26.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-26.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-25.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-25.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-24.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-24.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-23.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-23.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-22.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-22.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-21.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-21.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-20.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-20.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-19.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-19.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-18.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-18.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-17.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-17.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-16.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-16.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-15.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-15.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-10.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-10.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-11.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-11.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-12.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-12.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-13.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-13.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-14.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-14.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-1.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-1.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-2.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-2.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-3.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-3.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-4.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-4.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-5.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-5.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-6.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-6.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-7.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-7.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-8.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-8.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<!--Gallery Page Single-->
-						<div class="gallery-page__single">
-							<div class="gallery-page__img">
-								<img src="assets/images/gallery/slide-gallery-9.jpg" alt="">
-								<div class="gallery-page__icon">
-									<a class="img-popup" href="assets/images/gallery/slide-gallery-9.jpg"><span
-											class="icon-plus-symbol"></span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--Gallery Page End-->
-
-        <!--Product Details Start-->
-        <section class="product-details">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="product-details__img">
-                            <img src="assets/images/shop/image-13-01-2026.JPEG" alt="" />
-                            <div class="blog-sidebar__video-link">
-                                <a href="https://youtube.com/shorts/7v8b_bWmLG8?si=vXzo85iV5wMwn5j3">
-                                    <div class="blog-sidebar__video-icon">
-                                        <span class="fa fa-play"></span>
-                                        <i class="ripple"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-6">
-                        <div class="product-details__top">
-                            <h3 class="product-details__title">Tailored to Fit Your Space & Style </h3>
-                        </div><br>
-                        <div class="product-details__content">
-                            <p class="product-details__content-text1">Whether you're looking for a sleek modern look or a refined minimalistic 
-                                luxury, we craft walk-in closets that are fully customizable to your space, 
-                                taste, and needs. From wardrobe sections, drawers, and shelves to 
-                                integrated mirrors and lighting, every detail is designed for seamless 
-                                sophistication. </p>
-                            
-                        </div>
-                        <div class="product-details__top">
-                            <h3 class="product-details__title">Transform Your Dressing Experience</h3>
-                        </div>
-                        <p class="product-details__content-text1">Step into luxury every day. Whether it's a compact design or a spacious dressing room, our 
-                            walk-in closets enhance both form and function – perfect for homes in Dubai that value 
-                            sophistication and space efficiency.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Product Details End-->
-
-        <section class="team-details">
-            <div class="team-details-shape-1 float-bob-x">
-                <img src="assets/images/shapes/team-details-shape-1.png" alt="">
-            </div>
-            <div class="container">
-                <div class="team-details__bottom">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="team-details__bottom-left">
-                                <h4 class="team-details__bottom-left-title">Step Into a World of Organized Luxury</h4>
-                                <p class="team-details__bottom-left-text">Your perfect walk-in closet is just a conversation away. 
-                                    Talk to Our Design Experts Today and discover how custom storage can transform your 
-                                    space. </p>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="team-details__bottom-right">
-                        <div class="contact-page__details">
-                                <ul class="list-unstyled contact-page__details-list">
-                                    <li>
-                                        <span>Call Us</span>
-                                        <p><a href="tel:+971559132200">+971559132200</a></p>
-                                    </li>
-                                    <li>
-                                        <span>Send email</span>
-                                        <p><a href="mailto:sales@theyyampattilgcc.com
-                                            ">sales@theyyampattilgcc.com
-                                        </a></p>
-                                    </li>
-                                    <li>
-                                        <span>Visit Office</span>
-                                        <p>Theyyampattil Furniture Trading LLC<br>Toll free-8008733<br> Dubai-04 333 6116<br> Sharjah - 06 7676 297<br> Abudhabi - 026 26 85 26</p>
-                                    </li>
-                                </ul>
-                                <div class="contact-page__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                   <a href="https://www.facebook.com/share/1AcRXM8DF7/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                                    <a href="https://x.com/TheyyampattilF"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="https://www.youtube.com/@TheyyampattilFurnitureuae/featured"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!--Newsletter Start-->
-        <!-- <section class="newsletter">
-            <div class="container">
-                <div class="newsletter__inner wow fadeInUp" data-wow-delay="100ms">
-                    <div class="newsletter-shape-1"
-                        style="background-image: url(assets/images/shapes/newsletter-shape-1.png);"></div>
-                    <div class="newsletter__left">
-                        <h3 class="newsletter__title">Join Our Newsletter</h3>
-                        <p class="newsletter__text">Lorem ipsum dolor amet, elit do eiusmod sed</p>
-                    </div>
-                    <div class="newsletter__right">
-                        <form class="newsletter__form">
-                            <div class="newsletter__input-box">
-                                <input type="email" placeholder="Enter your email" name="email">
-                                <button type="submit" class="thm-btn newsletter__btn">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!--Newsletter End-->
-
-        <!--Site Footer Start-->
-        <footer class="site-footer">
-            <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.jpg);">
-            </div>
-            <div class="site-footer__top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="footer-widget__column footer-widget__about">
-                                <div class="footer-widget__logo">
-                                    <a href="https://theyyampattilgcc.com/"><img src="assets/images/resources/footer-log.png" alt=""></a>
-                                </div>
-                                <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">Theyyampattil furniture is modern and contemporary with a twist of French Design Flare.</p>
-                                </div>
-                                <div class="site-footer__social">
-                                    <a href="https://www.tiktok.com/@theyyampatill_furniture?_t=8eVHrpkCNSE&_r=1"><i class="fab fa-tiktok"></i></a>
-                                    <a href="https://www.facebook.com/share/1AcRXM8DF7/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                                    <a href="https://x.com/TheyyampattilF"><i class="fa-brands fa-x-twitter"></i></a> 
-                                     <a href="https://www.youtube.com/@TheyyampattilFurnitureuae/featured"><i class="fab fa-youtube"></i></a> 
-                                    <a href="https://instagram.com/theyyampattil_furniture_dubai?igshid=MzRlODBiNWFlZA=="><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget__explore clearfix">
-                                <h3 class="footer-widget__title">Explore</h3>
-                                <ul class="footer-widget__explore-list list-unstyled clearfix">
-                                    <li><a href="">About</a></li>
-                                    <li><a href="">Contact</a></li>
-                                    <!-- <li><a href="team.html">Our Team</a></li> -->
-                                    <li><a href="">Products</a></li>
-                                    <li><a href="">Gallery</a></li>
-                                    <li><a href="">Downloads</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                            <div class="footer-widget__column footer-widget__services clearfix">
-                                <h3 class="footer-widget__title">Products</h3>
-                                <ul class="footer-widget__services-list list-unstyled clearfix">
-                                    <li><a href="">Partition</a></li>
-                                    <li><a href="">Wall Panel</a></li>
-                                    <li><a href="">Tv Wall</a></li>
-                                    <li><a href="">Closets</a></li>
-                                    <li><a href="">Wall Cladding</a></li>
-                                    <li><a href="">Welcome Unit</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                           <div class="footer-widget__column footer-widget__contact clearfix">
-                                <h3 class="footer-widget__title">Contact</h3>
-                                <ul class="footer-widget__contact-list list-unstyled clearfix">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-phone-call"></span>
-                                        </div>
-                                        <div class="text">
-                                            <h5>Call Us</h5>
-                                            <p><a href="tel:+971559132200">+971559132200</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-message"></span>
-                                        </div>
-                                        <div class="text">
-                                            <h5>Send email</h5>
-                                            <p><a href="mailto:sales@theyyampattilgcc.com">sales@theyyampattilgcc.com</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-location"></span>
-                                        </div>
-                                        <div class="text">
-                                            <h5>Theyyampattil Furniture Trading LLC </h5>
-                                            <p style="color: white;">Theyyampattil Furniture Trading LLC<br>
-                                            Toll free-8008733<br>Dubai-04 333 6116<br> Sharjah - 06 7676 297 <br>Abudhabi - 026 26 85 26</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="site-footer__bottom-inner">
-                                <p class="site-footer__bottom-text">© Copyright 2023 by Theyyampattil Furniture. Designed By <a href="https://4bizinternational.com/">4Biz International</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--Site Footer End-->
-
-
-    </div><!-- /.page-wrapper -->
-
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-            <div class="logo-box">
-                <a href="https://theyyampattilgcc.com/" aria-label="logo image"><img src="assets/images/resources/footer-logo.png"
-                        width="155" alt="" /></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:sales@theyyampattilgcc.com">sales@theyyampattilgcc.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:+971559132200">+971559132200</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="https://www.tiktok.com/@theyyampatill_furniture?_t=8eVHrpkCNSE&_r=1" class="fab fa-tiktok"></a>
-                    <a href="https://www.facebook.com/share/1AcRXM8DF7/?mibextid=wwXIfr" class="fab fa-facebook-square"></a>
-                    <a href="https://x.com/TheyyampattilF"><i class="fa-brands fa-x-twitter"></i></a> 
-                    <a href="https://www.youtube.com/@TheyyampattilFurnitureuae/featured" class="fab fa-youtube"></a>
-                    <a href="https://instagram.com/theyyampattil_furniture_dubai?igshid=MzRlODBiNWFlZA==" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
-
+        <div class="container" style="margin-top: 80px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3);">&copy; 2024 4Biz International LLC. All rights reserved.</p>
         </div>
-        <!-- /.mobile-nav__content -->
-    </div>
-    <!-- /.mobile-nav__wrapper -->
+    </footer>
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
-    <!-- /.search-popup -->
+    <script src="js/main.js"></script>
+    <script>
+        // Simple Scroll Animation Trigger
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/+971559132200?text=I%20just%20visited%20your%20website,%20I%20would%20like%20to%20know%20more%20about%20your%20products%20and%20services." 
-       class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-    <!-- Call Floating Button (Right) -->
-<a href="tel:0553700866" class="call-float" title="Call us">
-    <img src="https://img.icons8.com/color/48/000000/phone--v1.png" alt="Phone Icon" />
-  </a>
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-
-    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
-    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
-    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
-    <script src="assets/vendors/odometer/odometer.min.js"></script>
-    <script src="assets/vendors/swiper/swiper.min.js"></script>
-    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
-    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
-    <script src="assets/vendors/wow/wow.js"></script>
-    <script src="assets/vendors/isotope/isotope.js"></script>
-    <script src="assets/vendors/countdown/countdown.min.js"></script>
-    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
-    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="assets/vendors/vegas/vegas.min.js"></script>
-    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/vendors/timepicker/timePicker.js"></script>
-    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
-    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
-
-
-
-
-    <!-- template js -->
-    <script src="assets/js/ambed.js"></script>
-
-
-    <!-- toolbar js -->
-    <script src="assets/vendors/toolbar/js/js.cookie.min.js"></script>
-    <script src="assets/vendors/toolbar/js/jQuery.style.switcher.min.js"></script>
-    <script src="assets/vendors/toolbar/js/toolbar.js"></script>
-
+        // Header Scroll Logic
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
-
 </html>
