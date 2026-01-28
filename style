@@ -1,301 +1,505 @@
-/* ==============================
-   script.js — REPLACEMENT VERSION
-   Supports main & modal country select,
-   clean form submit, WhatsApp, modal,
-   lightbox, mobile nav, animations
-================================ */
+/* 4Biz International - Ultra Advanced UI System
+    Focus: Mathematical Alignment & High-End Visuals
+*/
 
-document.addEventListener('DOMContentLoaded', function () {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
 
-  /* ------------------
-     UTILITY
-  ------------------ */
-  const $ = (sel, ctx=document) => ctx.querySelector(sel);
-  const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
-  const encode = s => encodeURIComponent(s);
+:root {
+    /* Brand Colors */
+    --bg: #050505;
+    --accent: #7000FF;      /* Electric Purple */
+    --secondary: #00F0FF;   /* Cyber Cyan */
+    --text: #ffffff;
+    --text-dim: #a0a0a0;
+    
+    /* Glassmorphism & Borders */
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    
+    /* Layout Constants */
+    --container-width: 1200px;
+    --transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  /* =====================
-     COUNTRY LIST (full)
-     — used for both banner + modal
-  ===================== */
-  const ALL_COUNTRIES = [
-    { iso: 'AF', name: 'Afghanistan', dial: '+93' },
-    { iso: 'AL', name: 'Albania', dial: '+355' },
-    { iso: 'DZ', name: 'Algeria', dial: '+213' },
-    { iso: 'AS', name: 'American Samoa', dial: '+1' },
-    { iso: 'AD', name: 'Andorra', dial: '+376' },
-    { iso: 'AO', name: 'Angola', dial: '+244' },
-    { iso: 'AR', name: 'Argentina', dial: '+54' },
-    { iso: 'AM', name: 'Armenia', dial: '+374' },
-    { iso: 'AU', name: 'Australia', dial: '+61' },
-    { iso: 'AT', name: 'Austria', dial: '+43' },
-    { iso: 'AZ', name: 'Azerbaijan', dial: '+994' },
-    { iso: 'BH', name: 'Bahrain', dial: '+973' },
-    { iso: 'BD', name: 'Bangladesh', dial: '+880' },
-    { iso: 'BY', name: 'Belarus', dial: '+375' },
-    { iso: 'BE', name: 'Belgium', dial: '+32' },
-    { iso: 'BR', name: 'Brazil', dial: '+55' },
-    { iso: 'CA', name: 'Canada', dial: '+1' },
-    { iso: 'CN', name: 'China', dial: '+86' },
-    { iso: 'EG', name: 'Egypt', dial: '+20' },
-    { iso: 'FR', name: 'France', dial: '+33' },
-    { iso: 'DE', name: 'Germany', dial: '+49' },
-    { iso: 'IN', name: 'India', dial: '+91' },
-    { iso: 'ID', name: 'Indonesia', dial: '+62' },
-    { iso: 'IT', name: 'Italy', dial: '+39' },
-    { iso: 'JP', name: 'Japan', dial: '+81' },
-    { iso: 'KE', name: 'Kenya', dial: '+254' },
-    { iso: 'MY', name: 'Malaysia', dial: '+60' },
-    { iso: 'MX', name: 'Mexico', dial: '+52' },
-    { iso: 'NL', name: 'Netherlands', dial: '+31' },
-    { iso: 'NZ', name: 'New Zealand', dial: '+64' },
-    { iso: 'NG', name: 'Nigeria', dial: '+234' },
-    { iso: 'PK', name: 'Pakistan', dial: '+92' },
-    { iso: 'PH', name: 'Philippines', dial: '+63' },
-    { iso: 'PL', name: 'Poland', dial: '+48' },
-    { iso: 'PT', name: 'Portugal', dial: '+351' },
-    { iso: 'RO', name: 'Romania', dial: '+40' },
-    { iso: 'RU', name: 'Russia', dial: '+7' },
-    { iso: 'SA', name: 'Saudi Arabia', dial: '+966' },
-    { iso: 'ZA', name: 'South Africa', dial: '+27' },
-    { iso: 'KR', name: 'South Korea', dial: '+82' },
-    { iso: 'ES', name: 'Spain', dial: '+34' },
-    { iso: 'SE', name: 'Sweden', dial: '+46' },
-    { iso: 'CH', name: 'Switzerland', dial: '+41' },
-    { iso: 'TR', name: 'Turkey', dial: '+90' },
-    { iso: 'AE', name: 'United Arab Emirates', dial: '+971' },
-    { iso: 'GB', name: 'United Kingdom', dial: '+44' },
-    { iso: 'US', name: 'United States', dial: '+1' }
-  ];
+/* --- Global Reset & Core Alignment --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
-  function populateCountrySelect(sel) {
-    if (!sel) return;
-    sel.innerHTML = '<option value="">Select country</option>';
-    ALL_COUNTRIES.slice().sort((a, b) => a.name.localeCompare(b.name))
-      .forEach(c => {
-        const o = document.createElement('option');
-        o.value = c.iso;
-        o.dataset.dial = c.dial;
-        o.textContent = `${c.name} (${c.dial})`;
-        sel.appendChild(o);
-      });
-  }
+html {
+    scroll-behavior: smooth;
+}
 
-  function normalizeNumber(raw, sel) {
-    raw = String(raw || '').trim();
-    if (!raw) return '';
-    if (raw.startsWith('+')) {
-      return '+' + raw.slice(1).replace(/\D+/g, '');
-    }
-    const digits = raw.replace(/\D+/g, '');
-    const opt = sel && sel.selectedOptions[0] ? sel.selectedOptions[0].dataset.dial : '';
-    const dial = opt ? opt.replace(/\D+/g, '') : '';
-    const stripped = digits.replace(/^0+/, '');
-    return dial ? `+${dial}${stripped}` : digits;
-  }
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+}
 
-  /* =====================
-     MAIN FORM COUNTRY
-  ===================== */
-  /* =====================
-     MAIN FORM COUNTRY
-  ===================== */
-  const mainSelect = $('#country-select');
-  const mainPrefix = $('#phone-prefix');
-  const mainPhone = $('#phone');
+/* The 'Anchor' Container: 
+   This ensures every section starts at the same horizontal pixel.
+*/
+.container { 
+    max-width: var(--container-width); 
+    margin: 0 auto; 
+    padding: 0 40px; 
+}
 
-  // helper to set selection and prefix/placeholder
-  function setSelectByIso(selectEl, iso, prefixEl, phoneEl) {
-    if (!selectEl || !iso) return false;
-    const opt = selectEl.querySelector(`option[value="${iso}"]`);
-    if (!opt) return false;
-    selectEl.value = iso;
-    const dial = opt.dataset.dial || '';
-    if (prefixEl) prefixEl.value = dial;
-    if (phoneEl) phoneEl.placeholder = dial ? `${dial} 5xxxxxxx` : 'Phone Number';
-    return true;
-  }
+/* --- Background Particles --- */
+#particleCanvas { 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    z-index: -1; 
+    pointer-events: none; 
+}
 
-  // populate select if present
-  if (mainSelect) populateCountrySelect(mainSelect);
+/* --- Floating Navigation & Larger Logo --- */
+.header { 
+    position: fixed; 
+    top: 25px; left: 50%; 
+    transform: translateX(-50%); 
+    width: 90%; 
+    max-width: var(--container-width); 
+    background: rgba(10, 10, 10, 0.4); 
+    backdrop-filter: blur(20px); 
+    border: 1px solid var(--border); 
+    border-radius: 100px; 
+    padding: 12px 35px; 
+    z-index: 1000; 
+    transition: var(--transition); 
+}
 
-  // Try browser locale first, then fallback to IP lookup (non-blocking)
-  if (mainSelect) {
-    try {
-      const locale = (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().locale : (navigator && navigator.language) || '';
-      if (locale) {
-        const parts = locale.split(/[-_]/);
-        if (parts.length > 1) {
-          const iso = parts[1].toUpperCase();
-          setSelectByIso(mainSelect, iso, mainPrefix, mainPhone);
-        }
-      }
-    } catch (e) { /* ignore locale errors */ }
+.header.scrolled { 
+    top: 15px; 
+    width: 95%; 
+    background: rgba(0, 0, 0, 0.85); 
+    padding: 8px 35px;
+}
 
-    // If not set by locale, try IP lookup (non-blocking)
-    // This will update the select when the response arrives
-    (function tryIpFallback() {
-      // only run if no selection yet
-      if (mainSelect.value) return;
-      fetch('https://ipapi.co/json/').then(resp => resp.ok ? resp.json() : Promise.reject()).then(data => {
-        const iso = data && data.country ? data.country.toUpperCase() : '';
-        if (iso) setSelectByIso(mainSelect, iso, mainPrefix, mainPhone);
-      }).catch(() => { /* ignore network errors */ });
-    })();
-  }
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
 
-  // attach change and blur handlers (works whether auto-set or manual)
-  if (mainSelect && mainPhone && mainPrefix) {
-    mainSelect.addEventListener('change', function () {
-      const dial = this.selectedOptions[0] ? this.selectedOptions[0].dataset.dial : '';
-      mainPrefix.value = dial || '';
-      if (mainPhone) mainPhone.placeholder = dial ? `${dial} 5xxxxxxx` : 'Phone Number';
-    });
-    mainPhone.addEventListener('blur', function () {
-      this.value = normalizeNumber(this.value, mainSelect);
-    });
-  }
+/* Logo Sizing & Transition */
+.logo img {
+    height: 52px; /* Increased for better visibility */
+    width: auto;
+    display: block;
+    transition: height 0.3s ease;
+    filter: invert(1);
+}
+
+.header.scrolled .logo img {
+    height: 42px; /* Smoothly shrinks on scroll */
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 30px; 
+    list-style: none; 
+}
+
+.nav-links a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover { 
+    color: #fff; 
+    text-shadow: 0 0 10px var(--accent); 
+}
+
+/* --- Typography System --- */
+.gradient-text { 
+    background: linear-gradient(to right, #fff, var(--accent), var(--secondary)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.ultra-heading { 
+    font-family: 'Space Grotesk', sans-serif; 
+    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    line-height: 1.1; 
+    margin-bottom: 25px; 
+}
+
+.section-tag { 
+    color: var(--accent); 
+    font-weight: 700; 
+    letter-spacing: 4px; 
+    text-transform: uppercase; 
+    font-size: 0.75rem; 
+    display: block; 
+    margin-bottom: 15px; 
+}
+
+/* --- Layout Architecture --- */
+.section-padding { 
+    padding: 120px 0; 
+}
+
+/* Hero Section */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.hero-content { 
+    max-width: 900px; 
+}
+
+.hero-content p { 
+    font-size: 1.2rem; 
+    color: var(--text-dim); 
+    margin-bottom: 40px; 
+    max-width: 650px; 
+    margin: 0 auto 40px; 
+}
+
+/* Bento Grid: Precise 3-Column Services */
+
+.bento-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin-top: 60px; 
+}
+
+.bento-card { 
+    background: var(--glass); 
+    border: 1px solid var(--border); 
+    padding: 50px 40px; 
+    border-radius: 35px; 
+    transition: var(--transition); 
+    text-align: left; 
+}
+
+.bento-card:hover { 
+    border-color: var(--accent); 
+    transform: translateY(-10px); 
+    background: rgba(112, 0, 255, 0.05); 
+}
+
+.icon-wrap { 
+    font-size: 2.5rem; 
+    color: var(--accent); 
+    margin-bottom: 25px; 
+}
+
+/* Split Grid: Balanced Content/Image Ratio */
+.reveal-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .reveal-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* --- Buttons --- */
+.cta-button {
+    background: #fff; 
+    color: #000; 
+    padding: 12px 28px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* --- Reveal Animations --- */
+.fade-up { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+
+.fade-up.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Footer Alignment */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; }
+}
 
 
-  /* =====================
-     MODAL FORM COUNTRY
-  ===================== */
-  /* =====================
-     MODAL FORM COUNTRY
-  ===================== */
-  const modalSelect = $('#modal-country-select');
-  const modalPrefix = $('#modal-phone-prefix');
-  const modalPhone = $('#modal-phone');
-
-  // populate modal select
-  if (modalSelect) populateCountrySelect(modalSelect);
-
-  // Try browser locale first, then IP fallback (non-blocking)
-  if (modalSelect) {
-    try {
-      const locale = (Intl && Intl.DateTimeFormat) ? Intl.DateTimeFormat().resolvedOptions().locale : (navigator && navigator.language) || '';
-      if (locale) {
-        const parts = locale.split(/[-_]/);
-        if (parts.length > 1) {
-          const iso = parts[1].toUpperCase();
-          setSelectByIso(modalSelect, iso, modalPrefix, modalPhone);
-        }
-      }
-    } catch (e) { /* ignore */ }
-
-    (function tryIpFallbackModal() {
-      if (modalSelect.value) return;
-      fetch('https://ipapi.co/json/').then(resp => resp.ok ? resp.json() : Promise.reject()).then(data => {
-        const iso = data && data.country ? data.country.toUpperCase() : '';
-        if (iso) setSelectByIso(modalSelect, iso, modalPrefix, modalPhone);
-      }).catch(() => { /* ignore */ });
-    })();
-  }
-
-  // attach change and blur handlers
-  if (modalSelect && modalPhone && modalPrefix) {
-    modalSelect.addEventListener('change', function () {
-      const dial = this.selectedOptions[0] ? this.selectedOptions[0].dataset.dial : '';
-      modalPrefix.value = dial || '';
-      if (modalPhone) modalPhone.placeholder = dial ? `${dial} 5xxxxxxx` : 'Phone Number';
-    });
-    modalPhone.addEventListener('blur', function () {
-      this.value = normalizeNumber(this.value, modalSelect);
-    });
-  }
 
 
-  /* =====================
-     CLEAN FORM SUBMIT HANDLERS
-     — allow normal send-mail.php
-  ===================== */
-  function attachSubmit(form, sel, phoneEl) {
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
 
-      // normalize before submit
-      if (phoneEl) phoneEl.value = normalizeNumber(phoneEl.value, sel);
 
-      // basic validation
-      const name = this.querySelector('[name="name"]');
-      const email = this.querySelector('[name="email"]');
+/* ---------------------------
+   Expanded Sections — Append
+   --------------------------- */
 
-      if (!name || !name.value.trim()) {
-        alert('Please enter your name');
-        e.preventDefault();
-        name && name.focus();
-        return;
-      }
-      if (!email || !email.value.trim()) {
-        alert('Please enter your email');
-        e.preventDefault();
-        email && email.focus();
-        return;
-      }
-      if (!phoneEl || !phoneEl.value.trim()) {
-        alert('Please enter phone number');
-        e.preventDefault();
-        phoneEl && phoneEl.focus();
-        return;
-      }
+/* Generic section container spacing */
+section {
+  padding: 72px 0;
+  position: relative;
+}
 
-      // no preventDefault → normal submit happens
-    });
-  }
+/* Reuse container anchor */
+section.container { padding-left: 40px; padding-right: 40px; }
 
-  attachSubmit($('#main-form'), mainSelect, mainPhone);
-  attachSubmit($('#modal-quote-form'), modalSelect, modalPhone);
+/* ---------- ABOUT ---------- */
+.about {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent 60%);
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
 
-  /* =====================
-     WHATSAPP ICON PREFILL
-  ===================== */
-  (function whatsapp() {
-    const defaultPhone = '971559132200';
-    const baseMsg = "Hi — interested. Please send details.";
-    $$('a[href*="wa.me"], .wa-btn, .btn-wa, .fixed-wa').forEach(el => {
-      const ph = el.dataset.phone ? el.dataset.phone.trim() : defaultPhone;
-      const prd = el.dataset.product || '';
-      const msg = prd ? `${baseMsg} Product: ${prd}` : baseMsg;
-      const url = `https://wa.me/${ph}?text=${encode(msg)}`;
-      if (el.tagName.toLowerCase() === 'a') {
-        el.href = url; el.target='_blank';
-      } else {
-        el.addEventListener('click', () => window.open(url,'_blank'));
-      }
-    });
-  })();
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 36px;
+  align-items: start;
+}
 
-  /* =====================
-     MODAL OPEN/CLOSE
-  ===================== */
-  const modal = $('#contactModal');
-  const closeBtns = $$('.close-modal, .modal-close');
+.about-text h2 {
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  margin-bottom: 12px;
+  color: var(--text);
+}
 
-  function openModal(product) {
-    if (!modal) return;
-    modal.classList.add('show');
-    modal.setAttribute('aria-hidden','false');
-    const nameFld = modal.querySelector('[name="name"]');
-    nameFld && nameFld.focus();
-    if (product) {
-      const titleEl = modal.querySelector('.modal-product-name');
-      titleEl && (titleEl.textContent = product);
-    }
-  }
-  function closeModal() {
-    if (!modal) return;
-    modal.classList.remove('show');
-    modal.setAttribute('aria-hidden','true');
-  }
+.about-text p {
+  color: var(--text-dim);
+  font-size: 1rem;
+  max-width: 680px;
+}
 
-  $$('.open-modal, .btn-inquire, .btn-form').forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal(btn.dataset.product || '');
-    });
-  });
-  closeBtns.forEach(b => b.addEventListener('click', closeModal));
-  modal && modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+.about-stats {
+  display: grid;
+  gap: 18px;
+}
 
-});
+.stat {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: 14px;
+}
 
+.stat h3 {
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.stat p { color: var(--text-dim); font-size: 0.95rem; }
+
+/* ---------- COMMITMENT ---------- */
+.commitment {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.commitment h2 { margin-bottom: 10px; }
+.commitment p { max-width: 900px; margin: 0 auto; color: var(--text-dim); }
+
+/* ---------- SERVICES (cards) ---------- */
+.services h2 { margin-bottom: 18px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 26px;
+  border-radius: 18px;
+  color: var(--text);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.55);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card h3 { font-size: 1.05rem; margin: 0; color: #fff; }
+.card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 22px 48px rgba(112,0,255,0.08);
+}
+
+/* CTA alignment under services */
+.services .btn, .services .cta-button {
+  margin-top: 20px;
+}
+
+/* ---------- REVIEWS ---------- */
+.reviews {
+  text-align: center;
+  background: transparent;
+}
+
+.reviews p { max-width: 820px; margin: 0 auto 18px; color: var(--text-dim); }
+
+/* ---------- FAQ ---------- */
+.faq h2 { margin-bottom: 12px; }
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-q {
+  width: 100%;
+  padding: 14px 18px;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-q::after {
+  content: "+";
+  color: var(--text-dim);
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+.faq-item.open .faq-q::after { transform: rotate(45deg); color: var(--accent); }
+
+.faq-a {
+  padding: 12px 18px;
+  color: var(--text-dim);
+  border-top: 1px solid rgba(255,255,255,0.02);
+  display: none;
+}
+
+/* ---------- BLOG PREVIEW ---------- */
+.blog h2 { margin-bottom: 12px; }
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+  color: var(--text-dim);
+}
+
+.blog-list li {
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.03);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+/* ---------- CONTACT ---------- */
+.contact {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+
+.contact h2 { margin-bottom: 12px; }
+.contact p { color: var(--text-dim); margin: 6px 0; }
+
+/* Contact CTA */
+.contact .btn, .contact .cta-button {
+  margin-top: 12px;
+}
+
+/* ---------- Buttons (variants) ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(112,0,255,0.08);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ---------- Small utilities ---------- */
+.kicker {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-card { padding: 36px 28px; }
+}
+
+@media (max-width: 680px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr; }
+  .about-grid { gap: 20px; padding-top: 18px; }
+  section { padding: 48px 0; }
+}
+
+/* ---------- Accessibility & Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ---------- Small polish for hero/content alignment ---------- */
+.hero .hero-content { padding: 0 20px; }
