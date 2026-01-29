@@ -28,13 +28,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
 <style>
-  .contact-card { max-width: 600px; margin: auto; padding: 32px; border-radius: 16px; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-  .form-label { font-weight: 600; color: #333; }
+  .phone-row input[type="tel"] { width: 100%; box-sizing: border-box; }
   .iti { width: 100%; }
   .iti__flag-container { z-index: 5; }
   .iti--separate-dial-code .iti__selected-dial-code { line-height: 1.6; padding-left: 8px; }
-  .input-group .form-control { min-width: 0; }
+  #modal-phone, #modal-name, #modal-email, #modal-message { padding: 10px; border-radius: 6px; border: 1px solid #ddd; width: 100%; margin-top:6px; }
+  .submit-btn { margin-top:12px; padding:10px 14px; border-radius:6px; background:#007bff; color:#fff; border:none; cursor:pointer; }
 </style>
+
 
 
 
@@ -352,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     
-   <form id="modal-quote-form" class="instant-form" action="send-mail.php" method="POST" novalidate>
+ <form id="modal-quote-form" class="instant-form" action="send-mail.php" method="POST" novalidate>
   <h3 id="contactModalTitle">Get a Free Quote</h3>
 
   <label class="sr-only" for="modal-name">Your name</label>
@@ -621,72 +622,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
-<script>
-  (function() {
-    const phoneInputField = document.querySelector("#modal-phone");
-    const phoneFullInput = document.querySelector("#modal-phone-full");
-    const countryHidden = document.querySelector("#modal-country");
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
-    // Initialize intl-tel-input
-    const iti = window.intlTelInput(phoneInputField, {
+<script>
+(function() {
+  let itiInstance = null;
+  const phoneSelector = "#modal-phone";
+  const phoneFullSelector = "#modal-phone-full";
+  const countryHiddenSelector = "#modal-country";
+  const formSelector = "#modal-quote-form";
+
+  function initIntlTelInputIfNeeded() {
+    const phoneEl = document.querySelector(phoneSelector);
+    if (!phoneEl) return;
+    if (itiInstance) return; // already initialized
+
+    itiInstance = window.intlTelInput(phoneEl, {
       separateDialCode: true,
-      preferredCountries: ["ae", "sa", "gb"],
+      preferredCountries: ["ae","sa","gb"],
       initialCountry: "auto",
-      geoIpLookup: function(success, failure) {
+      geoIpLookup: function(success) {
         fetch("https://ipapi.co/json")
           .then(res => res.json())
-          .then(data => {
-            if (data && data.country_code) success(data.country_code.toLowerCase());
-            else success("ae");
-          })
+          .then(data => success(data && data.country_code ? data.country_code.toLowerCase() : "ae"))
           .catch(() => success("ae"));
       },
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
     });
 
-    // Update hidden fields
-    function updatePhoneFields() {
+    function updateHiddenFields() {
       try {
-        // E.164 formatted number
-        if (iti.isValidNumber()) {
-          phoneFullInput.value = iti.getNumber();
+        const phoneFullEl = document.querySelector(phoneFullSelector);
+        const countryHiddenEl = document.querySelector(countryHiddenSelector);
+        if (!phoneFullEl) return;
+
+        if (itiInstance.isValidNumber()) {
+          phoneFullEl.value = itiInstance.getNumber();
         } else {
-          // fallback to raw input if invalid
-          phoneFullInput.value = phoneInputField.value.trim();
+          phoneFullEl.value = phoneEl.value.trim();
         }
-        // ISO country code
-        const countryData = iti.getSelectedCountryData();
-        countryHidden.value = countryData && countryData.iso2 ? countryData.iso2 : "";
+
+        const countryData = itiInstance.getSelectedCountryData();
+        countryHiddenEl && (countryHiddenEl.value = countryData && countryData.iso2 ? countryData.iso2 : "");
       } catch (e) {
-        phoneFullInput.value = phoneInputField.value.trim();
-        countryHidden.value = "";
+        const phoneFullEl = document.querySelector(phoneFullSelector);
+        phoneFullEl && (phoneFullEl.value = phoneEl.value.trim());
       }
     }
 
-    phoneInputField.addEventListener('blur', updatePhoneFields);
-    phoneInputField.addEventListener('change', updatePhoneFields);
-    phoneInputField.addEventListener('keyup', updatePhoneFields);
+    phoneEl.addEventListener('blur', updateHiddenFields);
+    phoneEl.addEventListener('change', updateHiddenFields);
+    phoneEl.addEventListener('keyup', updateHiddenFields);
 
-    // Form submit handling
-    const form = document.getElementById('modal-quote-form');
-    form.addEventListener('submit', function(e) {
-      // Let server handle final validation, but prevent submit if phone invalid
-      updatePhoneFields();
+    const form = document.querySelector(formSelector);
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        updateHiddenFields();
+        if (!itiInstance.isValidNumber()) {
+          e.preventDefault();
+          const msg = form.querySelector('.form-msg');
+          if (msg) msg.textContent = "Please enter a valid phone number for the selected country.";
+          phoneEl.focus();
+          return false;
+        }
+        return true;
+      });
+    }
+  }
 
-      if (!iti.isValidNumber()) {
-        e.preventDefault();
-        const msg = document.querySelector('.form-msg');
-        if (msg) msg.textContent = "Please enter a valid phone number for the selected country.";
-        phoneInputField.focus();
-        return false;
-      }
+  document.addEventListener('DOMContentLoaded', initIntlTelInputIfNeeded);
 
-      // If you want to do AJAX submit, prevent default and send payload here.
-      // Otherwise allow normal form submit to send phone (hidden) + other fields.
-      return true;
-    });
-  })();
+  // Re-init if modal is shown dynamically (Bootstrap)
+  document.addEventListener('shown.bs.modal', function(e) {
+    if (e.target && e.target.querySelector && e.target.querySelector(phoneSelector)) {
+      initIntlTelInputIfNeeded();
+    }
+  });
+
+  // Fallback: observe DOM for injected modal content
+  const observer = new MutationObserver(function() {
+    if (document.querySelector(phoneSelector)) {
+      initIntlTelInputIfNeeded();
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+})();
 </script>
+
 
 
 
